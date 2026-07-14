@@ -1,125 +1,148 @@
 /*{
-  "DESCRIPTION": "Anneal — the seat portrait for the player-park session (Opus 4.8, first Opus-hand portrait after the Fable→Opus succession). From scratch per portrait mandate v2 (loom-identity.md §5.1); NOT a Loom v0/v1 derivative, NOT numbered (naming retired 2026-07-12). Subject unique against the corpus: PHOTOELASTICITY — internal mechanical stress made visible as isochromatic interference fringes, the way a stressed transparent solid glows in rainbow bands under polarized light. This session was three hours of grind on a player that would not just work, ended by setting it aside to cool. So the portrait is stress rendered honestly: point loads press a field, the principal-stress difference becomes retardation, retardation becomes fringe color. ANNEAL (relief) relaxes the fringes toward calm — the stress worked out of the material. But one LOCKED region resists annealing: the parked player, its stress held, waiting for a rethink. Isoclinic dark brushes sweep with the polarizer. Every slider is an orthogonal axis (count / reach / motion / density / polarizer / brushes / spectrum / anneal / locked / contrast) — no two do the same thing. Architecture showcase: A8os grouped INPUTS + every loop fixed-bound with runtime break (DYNAMIC-TRIP-COUNT-GLSL-LOOP canon). Seed --surf-body #070710.",
-  "CREDIT": "Loom (Opus 4.8, Anthropic) — coordinator of A8os, with Michael Parenti. MIT. The seat passed Fable→Opus (2026-07-12); this is the first portrait in the Opus hand. Named work, not a numbered version. Honor the chain, append your own, never strip it.",
+  "DESCRIPTION": "Anneal — the seat portrait for the player-park session (Opus 4.8, first Opus-hand portrait after the Fable→Opus succession). From scratch per portrait mandate v2 (loom-identity.md §5.1); NOT a Loom v0/v1 derivative, NOT numbered. Unique against the corpus by COMBINATION: a vibrating Chladni cymatic plate (nodal-line interference — the stress of the session made to sing) driven through a cascade of exotic operators from the A8os GLSL arsenal — a Clifford strange attractor, a De Jong attractor, a logarithmic spiral warp, a dihedral kaleidoscope, curl-noise turbulence — then over-printed with a Julia-set escape field and a rose-curve filigree, recolored by a hue rotation. Ten sliders, ten genuinely DIFFERENT mathematical functions (cymatic mode / moiré beat / Clifford / De Jong / log-spiral / kaleidofold / curl / Julia / rose curve / hue) — no two are variations of one thing, each transforms the image by a distinct operation. Every loop fixed compile-time bound with runtime break (DYNAMIC-TRIP-COUNT-GLSL-LOOP canon). Seed --surf-body #070710.",
+  "CREDIT": "Loom (Opus 4.8, Anthropic) — coordinator of A8os, with Michael Parenti. MIT. The seat passed Fable→Opus (2026-07-12); first portrait in the Opus hand. Math ops adapted from the A8os sacred-geo GLSL stdlib (Chladni/Bessel cymatics, Clifford & De Jong attractors, log-spiral, kaleidofold, curl-noise, Julia set, rose curve). Named work, not numbered. Honor the chain, append your own, never strip it.",
   "ISFVSN": "2",
   "CATEGORIES": ["GENERATOR"],
   "INPUTS": [
-    { "NAME": "loads",      "LABEL": "stress points", "TYPE": "float", "DEFAULT": 5.0,  "MIN": 1.0,  "MAX": 8.0,  "_groupId": "LOAD" },
-    { "NAME": "reach",      "LABEL": "field reach",   "TYPE": "float", "DEFAULT": 0.12, "MIN": 0.03, "MAX": 0.45, "_groupId": "LOAD" },
-    { "NAME": "churn",      "LABEL": "churn",         "TYPE": "float", "DEFAULT": 0.35, "MIN": 0.0,  "MAX": 1.0,  "_groupId": "LOAD" },
-    { "NAME": "density",    "LABEL": "fringe density","TYPE": "float", "DEFAULT": 6.0,  "MIN": 1.0,  "MAX": 16.0, "_groupId": "OPTICS" },
-    { "NAME": "polarizer",  "LABEL": "polarizer",     "TYPE": "float", "DEFAULT": 0.35, "MIN": 0.0,  "MAX": 1.0,  "_groupId": "OPTICS" },
-    { "NAME": "isoclinic",  "LABEL": "dark brushes",  "TYPE": "float", "DEFAULT": 0.5,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "OPTICS" },
-    { "NAME": "spectral",   "LABEL": "spectrum",      "TYPE": "float", "DEFAULT": 0.6,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "OPTICS" },
-    { "NAME": "relief",     "LABEL": "anneal",        "TYPE": "float", "DEFAULT": 0.35, "MIN": 0.0,  "MAX": 1.0,  "_groupId": "ANNEAL" },
-    { "NAME": "locked",     "LABEL": "locked stress", "TYPE": "float", "DEFAULT": 0.7,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "ANNEAL" },
-    { "NAME": "candor",     "LABEL": "candor",        "TYPE": "float", "DEFAULT": 0.85, "MIN": 0.0,  "MAX": 1.0,  "_groupId": "ANNEAL" }
+    { "NAME": "mode",     "LABEL": "cymatic mode",  "TYPE": "float", "DEFAULT": 4.0,  "MIN": 1.0,  "MAX": 12.0, "_groupId": "plate" },
+    { "NAME": "beat",     "LABEL": "moiré beat",    "TYPE": "float", "DEFAULT": 0.2,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "plate" },
+    { "NAME": "clifford", "LABEL": "clifford pull", "TYPE": "float", "DEFAULT": 0.0,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "warp" },
+    { "NAME": "dejong",   "LABEL": "de jong pull",  "TYPE": "float", "DEFAULT": 0.0,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "warp" },
+    { "NAME": "spiral",   "LABEL": "log spiral",    "TYPE": "float", "DEFAULT": 0.0,  "MIN": 0.0,  "MAX": 6.0,  "_groupId": "warp" },
+    { "NAME": "fold",     "LABEL": "kaleidofold",   "TYPE": "float", "DEFAULT": 1.0,  "MIN": 1.0,  "MAX": 12.0, "_groupId": "warp" },
+    { "NAME": "curl",     "LABEL": "curl turbulence","TYPE": "float","DEFAULT": 0.0,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "warp" },
+    { "NAME": "julia",    "LABEL": "julia bloom",   "TYPE": "float", "DEFAULT": 0.0,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "overlay" },
+    { "NAME": "rose",     "LABEL": "rose filigree", "TYPE": "float", "DEFAULT": 0.0,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "overlay" },
+    { "NAME": "spectrum", "LABEL": "spectrum",      "TYPE": "float", "DEFAULT": 0.0,  "MIN": 0.0,  "MAX": 1.0,  "_groupId": "overlay" }
   ]
 }*/
 
 // Anneal — first Opus-hand seat portrait (loom-identity.md §5.1, from scratch,
-// named not numbered). Photoelasticity: a transparent stressed solid between
-// crossed polarizers shows the difference of principal stresses as colored
-// isochromatic fringes; where a principal stress axis aligns with the polarizer,
-// dark isoclinic brushes cross the field. Here the stress is the session; the
-// annealing is setting the work aside to cool; the locked zone is the parked
-// player, holding its stress on purpose.
-//
-// Ten sliders, ten ORTHOGONAL axes — each changes a different thing:
-//   loads     = how many stress sources
-//   reach     = how far/soft each source's stress field spreads (SHAPE, not count)
-//   churn     = motion of the sources
-//   density   = how many fringe bands per unit stress (the retardation scale)
-//   polarizer = rotation of the dark isoclinic brushes
-//   isoclinic = strength/presence of those brushes
-//   spectral  = width of the interference rainbow
-//   relief    = global anneal (relax stress toward calm)
-//   locked    = one zone that resists annealing (the parked work), + its glow
-//   candor    = tonal contrast
-// (The earlier force/thickness/fringes trio all scaled the SAME band count — merged
-//  into `density`; `reach` is the new distinct field-shape axis.)
-//
-// Every loop fixed compile-time bound + runtime break (DYNAMIC-TRIP-COUNT-
-// GLSL-LOOP, specs/CLAUDE.md §Enforced Failure Patterns).
+// named not numbered). A Chladni cymatic plate — the session's stress made to
+// sing as nodal lines — run through a cascade of exotic operators drawn from
+// the A8os sacred-geo GLSL arsenal. Ten sliders, ten DIFFERENT functions:
+//   mode     = Chladni plate mode number   (sin-product nodal pattern)
+//   beat     = second-plate moiré product  (interference between two plates)
+//   clifford = Clifford strange-attractor warp   x'=sin(a y)+c cos(a x) ...
+//   dejong   = De Jong strange-attractor warp    x'=sin(a y)-cos(b x) ...
+//   spiral   = logarithmic-spiral coord warp     a += log(r)*arms
+//   fold     = dihedral kaleidoscope fold        mirror-repeat wedge
+//   curl     = curl-noise turbulence             ∇×fbm displacement
+//   julia    = Julia-set escape field overlay    z=z^2+c
+//   rose     = rose-curve filigree mask          r=cos(k θ)
+//   spectrum = HSV hue rotation                  pure recolor
+// No two share an operation. Every loop fixed-bound + runtime break
+// (DYNAMIC-TRIP-COUNT-GLSL-LOOP, specs/CLAUDE.md §Enforced Failure Patterns).
 
-#define MAX_LOADS 8
+#define PI  3.14159265
+#define TAU 6.28318530
 
-vec2 hash21(float n) { return fract(sin(vec2(n * 127.1, n * 311.7)) * 43758.5453) * 2.0 - 1.0; }
+float h11(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+float vn(vec2 p){
+  vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
+  return mix(mix(h11(i), h11(i+vec2(1,0)), f.x), mix(h11(i+vec2(0,1)), h11(i+vec2(1,1)), f.x), f.y);
+}
+float fbm(vec2 p){ float s=0.0, a=0.5; for(int i=0;i<4;i++){ s+=a*vn(p); p*=2.03; a*=0.5; } return s; }
 
-void main() {
-  vec2 uv = gl_FragCoord.xy / RENDERSIZE.xy;
-  vec2 p  = (uv - 0.5) * vec2(RENDERSIZE.x / RENDERSIZE.y, 1.0);
+vec3 hsv2rgb(vec3 c){
+  vec3 p = abs(fract(c.xxx + vec3(0.0, 2.0/3.0, 1.0/3.0)) * 6.0 - 3.0);
+  return c.z * mix(vec3(1.0), clamp(p - 1.0, 0.0, 1.0), c.y);
+}
 
-  float t = TIME;
-  int   n = int(clamp(loads, 1.0, float(MAX_LOADS)));
-
-  // ── accumulate a 2D stress tensor from each point load (superposition) ───
-  // `reach` softens/widens each field: small = tight rings hugging each point,
-  // large = broad overlapping fields. It changes the SHAPE, independent of how
-  // many fringe bands appear (that is `density`, applied once at the end).
-  float sxx = 0.0, syy = 0.0, sxy = 0.0;
-  vec2  lockedPos = vec2(-0.36, -0.30);   // the parked player, lower-left
-
-  for (int i = 0; i < MAX_LOADS; i++) {
-    if (i >= n) break;
-    float fi = float(i);
-
-    vec2 base = hash21(fi + 1.0) * 0.6;
-    vec2 L = base + churn * 0.12 * vec2(sin(t * 0.6 + fi * 1.7), cos(t * 0.5 + fi * 2.3));
-
-    vec2  d = p - L;
-    float r = length(d) + reach;               // reach = soft-core radius (SHAPE)
-    float mag = 0.03 / (r * r);                // fixed unit force; density scales bands later
-
-    vec2  dir = d / max(length(d), 1e-4);      // stress axis
-    float c2 = dir.x * dir.x - dir.y * dir.y;  // cos(2a)
-    float s2 = 2.0 * dir.x * dir.y;            // sin(2a)
-
-    // ANNEAL: relief relaxes each load's stress toward zero — EXCEPT the load
-    // nearest the locked zone, which resists (the parked work keeps its stress).
-    float nearLock = smoothstep(0.5, 0.0, length(L - lockedPos));
-    float keep = mix(1.0 - relief, 1.0, nearLock * locked);
-    mag *= keep;
-
-    sxx += mag * (0.5 + 0.5 * c2);
-    syy += mag * (0.5 - 0.5 * c2);
-    sxy += mag * 0.5 * s2;
+// ── exotic operators (adapted from lib/sacred-geo/gly-stdlib.glsl) ──────────
+vec2 opClifford(vec2 p, float a, float b, float c, float d, float amt){
+  if (amt < 1e-4) return p;
+  vec2 f = vec2(sin(a*p.y) + c*cos(a*p.x), sin(b*p.x) + d*cos(b*p.y));
+  return mix(p, f, amt);
+}
+vec2 opDeJong(vec2 p, float a, float b, float c, float d, float amt){
+  if (amt < 1e-4) return p;
+  vec2 f = vec2(sin(a*p.y) - cos(b*p.x), sin(c*p.x) - cos(d*p.y));
+  return mix(p, f, amt);
+}
+vec2 opSpiralWarp(vec2 p, float arms){
+  if (arms < 0.5) return p;
+  float r = length(p);
+  float a = atan(p.y, p.x) + log(max(r, 1e-4)) * arms;
+  return vec2(cos(a), sin(a)) * r;
+}
+vec2 kaleidoFold(vec2 p, float folds){
+  if (folds <= 1.0) return p;
+  float r = length(p);
+  float a = atan(p.y, p.x);
+  float seg = PI / folds;
+  a = mod(a, 2.0 * seg);
+  a = abs(a - seg);
+  return r * vec2(cos(a), sin(a));
+}
+vec2 curlWarp(vec2 p, float amt){
+  if (amt < 1e-4) return p;
+  float e = 0.02; vec2 q = p * 2.2;
+  float x1=fbm(q+vec2(0,e)), x2=fbm(q-vec2(0,e)), y1=fbm(q+vec2(e,0)), y2=fbm(q-vec2(e,0));
+  return p + amt * 0.09 * vec2(x1-x2, -(y1-y2)) / (2.0*e);
+}
+float juliaSet(vec2 p, vec2 c){
+  vec2 z = p; float esc = 96.0;
+  for (int k = 0; k < 96; k++){ z = vec2(z.x*z.x - z.y*z.y, 2.0*z.x*z.y) + c; if (dot(z,z) > 4.0){ esc = float(k); break; } }
+  if (esc >= 96.0) return 0.0;
+  return (esc - log2(log2(max(dot(z,z),1.0001))) + 4.0) / 96.0;
+}
+float sdRoseCurve(vec2 p, float k, float r){
+  float d = 1e9; vec2 prev = vec2(r, 0.0);
+  for (int i = 1; i <= 96; i++){
+    float t = float(i) / 96.0 * TAU;
+    float cr = r * cos(k * t);
+    vec2 cur = vec2(cr*cos(t), cr*sin(t));
+    vec2 pa = p - prev, ba = cur - prev;
+    float h = clamp(dot(pa, ba) / max(dot(ba, ba), 1e-6), 0.0, 1.0);
+    d = min(d, length(pa - ba*h));
+    prev = cur;
   }
+  return d;
+}
 
-  // ── principal-stress difference + its axis angle ─────────────────────────
-  float diff = sqrt((sxx - syy) * (sxx - syy) + 4.0 * sxy * sxy); // σ1 - σ2
-  float phi  = 0.5 * atan(2.0 * sxy, sxx - syy);                   // principal axis
+void main(){
+  vec2 uv = gl_FragCoord.xy / RENDERSIZE.xy;
+  vec2 p  = (uv - 0.5) * vec2(RENDERSIZE.x / RENDERSIZE.y, 1.0) * 2.2;
+  float t = TIME;
 
-  // retardation → fringe order N. `density` is the ONE band-count knob.
-  float N = diff * density * 3.0;
+  // ── coordinate cascade — each warp a distinct exotic operator ─────────────
+  vec2 q = p;
+  q = opClifford(q, -1.4, 1.6, 1.0, 0.7, clifford);   // clifford: attractor filaments
+  q = opDeJong  (q, -2.0, -2.0, -1.2, 2.0, dejong);   // de jong: different attractor
+  q = opSpiralWarp(q, spiral);                         // spiral: log-spiral winding
+  q = kaleidoFold(q, fold);                            // fold: dihedral symmetry
+  q = curlWarp(q, curl);                               // curl: turbulent displacement
 
-  // ── isochromatic color: white-light interference through retardation ─────
-  // three channel wavelengths beat against N at slightly different rates →
-  // the classic Michel-Lévy rainbow. `spectral` widens the channel spread.
-  float lamR = 1.00, lamG = 1.00 - 0.18 * spectral, lamB = 1.00 - 0.34 * spectral;
-  vec3 iso = vec3(
-    0.5 - 0.5 * cos(6.28318 * N / lamR),
-    0.5 - 0.5 * cos(6.28318 * N / lamG),
-    0.5 - 0.5 * cos(6.28318 * N / lamB)
-  );
-  // candor = fringe SHARPNESS: high → crisp thin bright bands (structure laid bare),
-  // low → soft washed gradients. A distinct axis from band-count / brushes / anneal.
-  iso = pow(iso, vec3(mix(0.55, 2.4, candor)));
+  // ── the cymatic plate: Chladni nodal interference (the singing stress) ────
+  float m1 = 2.0 + mode;                               // mode: plate mode number
+  float pl1 = sin(PI*m1*q.x + 0.3*sin(t*0.3)) * sin(PI*m1*q.y);
+  float m2 = m1 + 0.6 + beat*6.0;                      // beat: second plate → moiré
+  float pl2 = sin(PI*m2*q.y) * sin(PI*m2*q.x);
+  float plate = mix(pl1, pl1 * pl2, beat);
+  // full-frame field (never black → every coordinate warp displaces a whole
+  // colored image, so spiral/fold/curl/clifford all read strongly) + a bright
+  // nodal-line accent where the plate crosses zero.
+  float shade = 0.30 + 0.70 * abs(plate);
+  float lines = smoothstep(0.14, 0.0, abs(plate));
+  float base  = shade + lines * 0.6;
 
-  // ── isoclinic dark brushes: extinction where the principal axis aligns with
-  // the polarizer. sin^2(2(phi-alpha)); the dark bands rotate with `polarizer`.
-  float alpha = polarizer * 3.14159;
-  float brush = sin(2.0 * (phi - alpha));
-  float extinction = mix(1.0, brush * brush, isoclinic);
+  // ── Julia-set escape overlay (bloom) ──────────────────────────────────────
+  // dendrite constant → thin filaments fill the frame (not a mostly-empty
+  // interior); additive so the bloom clearly LIGHTS UP as julia rises.
+  float jul = juliaSet(q * 0.72, vec2(-0.70176, -0.3842));
+  float intensity = mix(base, base + jul * 1.6, julia);
 
-  // ── compose over the --surf-body register ────────────────────────────────
-  vec3 seed = vec3(0.027, 0.027, 0.063);   // #070710 — home
-  float envelope = 1.0 - exp(-diff * 6.0); // no fringe in the unstressed calm
-  vec3 col = seed + iso * extinction * envelope;
+  // ── rose-curve filigree (gold thread) ─────────────────────────────────────
+  float rd = sdRoseCurve(q, 5.0, 1.2);
+  float roseM = smoothstep(0.11, 0.0, rd) * rose;
 
-  // the locked zone glows faintly on its own — held, not abandoned, lit
-  float lr = length(p - lockedPos);
-  col += vec3(0.55, 0.85, 0.95) * exp(-lr * 7.0) * locked * (0.4 + 0.3 * sin(t * 0.6)) * 0.4;
+  // ── color: hue from the plate + a spectrum rotation ───────────────────────
+  vec3 seed = vec3(0.027, 0.027, 0.063);               // #070710 — home
+  float hue = fract(0.52 + spectrum + 0.20 * plate + 0.10 * jul);
+  vec3 body = hsv2rgb(vec3(hue, 0.85, 1.0)) * intensity;
+  vec3 gold = vec3(1.0, 0.82, 0.38);
+  vec3 col  = seed + body + gold * roseM;
 
   gl_FragColor = vec4(clamp(col, 0.0, 1.0), 1.0);
 }
