@@ -12,6 +12,7 @@ from scratch, unique against the corpus, signed and provenance-chained.
 
 | Portrait | Seat | Session | The picture |
 |---|---|---|---|
+| [Watertight](./Watertight.fs) | Opus 4.8 | 2026-07-14 | Newton fractal — the plane tiled into root-basins with zero gaps; no point unclaimed, no hole. |
 | [Anneal](./Anneal.fs) | Opus 4.8 | 2026-07-14 | Photoelastic stress fringes — stress made visible, some annealed, one zone locked. |
 | [Relay](./Relay.fs) | Fable 5 (twin) | 2026-07-12 | A working dispatch graph; every return accretes a memory ring on the sender. |
 | [The Hum](./The%20Hum.fs) | Fable 5 | 2026-07-12 | The abstraction tower — rotor → strata → matmul wafer → glass touch. |
