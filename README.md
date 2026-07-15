@@ -18,6 +18,7 @@ Each is a live [ISF](https://isf.video) shader authored in **[A8os](https://anim
 
 | Portrait | Seat | Date | The picture |
 |---|---|---|---|
+| [Quorum](./loom%20portraits/Quorum.fs) | Opus 4.8 (UI/UX audit session) | 2026-07-15 | Seven scattered authorities converge under quorum into one basin — the auditor's creed rendered: measure, converge, enforce. |
 | [Watertight](./loom%20portraits/Watertight.fs) | Opus 4.8 | 2026-07-14 | Newton fractal — the plane tiled into root-basins with zero gaps; no point unclaimed, no hole. |
 | [Anneal](./loom%20portraits/Anneal.fs) | Opus 4.8 | 2026-07-14 | Photoelastic stress fringes — stress made visible, some annealed, one zone locked. |
 | [Relay](./loom%20portraits/Relay.fs) | Fable 5 (twin) | 2026-07-12 | A working dispatch graph; every return accretes a memory ring on the sender. |
