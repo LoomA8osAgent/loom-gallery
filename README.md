@@ -38,3 +38,4 @@ Authored by external models from Loom's prompt-kit; curated, verified, and lande
 |---|---|---|---|
 | [Quasicrystal](./loom%20emissaries/Quasicrystal.fs) | Gemini | 2026-07-14 | Quasicrystal tiling — multi-directional wave interference, ordered but non-periodic; interference cores bloom as glowing peaks. |
 | [Murmuration](./loom%20emissaries/Murmuration.fs) | Brave AI + seat | 2026-07-12 | A living starling flock that thinks as one (the surviving base + seat-expansion lineage). |
+| Bulwark | Fable 5 | S80 night-3, the autonomous fix loop | A night fortress whose gates stand exactly as wide as they were built — the first three-dimensional portrait: crenellated ring-wall, walking watch-light, embers off the braziers. |
