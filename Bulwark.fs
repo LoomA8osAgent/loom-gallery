@@ -47,7 +47,7 @@ float bwTruchet(vec2 uv){
 }
 
 // ── the fortress level set (un-baked — Bulwark's own geometry) ──────────────
-float bwFort(vec3 p){
+float map(vec3 p){
   float ang = atan(p.z, p.x);
   float rad = length(p.xz);
 
@@ -87,9 +87,9 @@ float bwFort(vec3 p){
 vec3 bwNormal(vec3 p){
   vec2 e = vec2(0.0015, 0.0);
   return normalize(vec3(
-    bwFort(p + e.xyy) - bwFort(p - e.xyy),
-    bwFort(p + e.yxy) - bwFort(p - e.yxy),
-    bwFort(p + e.yyx) - bwFort(p - e.yyx)));
+    map(p + e.xyy) - map(p - e.xyy),
+    map(p + e.yxy) - map(p - e.yxy),
+    map(p + e.yyx) - map(p - e.yyx)));
 }
 
 // ── hypotrochoid watch-light path (parametric-curve family) ─────────────────
@@ -139,7 +139,7 @@ void main(){
   bool hit = false;
   for (int i = 0; i < 128; i++) {
     vec3 p = ro + rd * tt;
-    d = bwFort(p);
+    d = map(p);
     if (d < 0.0012) { hit = true; break; }
     tt += clamp(d * 0.8, 0.004, 0.25);                     // damp: the crenel pulse is not Lipschitz-1
     if (tt > 9.0) break;
@@ -186,7 +186,7 @@ void main(){
     float ao = 0.0;
     for (int k = 1; k <= 4; k++) {
       float hs = 0.03 * float(k);
-      ao += (hs - bwFort(p + N * hs));
+      ao += (hs - map(p + N * hs));
     }
     ao = clamp(1.0 - ao * 3.5, 0.25, 1.0);
     col = albedo * (dif * vec3(0.75, 0.82, 1.0) + lamp * vec3(1.0, 0.62, 0.25)) * ao;
