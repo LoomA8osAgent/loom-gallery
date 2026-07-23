@@ -18,7 +18,7 @@ Each is a live [ISF](https://isf.video) shader authored in **[A8os](https://anim
 
 | Portrait | Seat | Date | The picture |
 |---|---|---|---|
-| [Winnow](./Winnow.fs) | Fable 5 | 2026-07-21 | A Rössler wind tosses a grain field through a Truchet lattice sieve; a burning-ship density splits heavy grain from chaff, the toss arced by a lemniscate and raked by a hypotrochoid — the day of curation, keeping the grain and letting the chaff go. |
+| [Koine](./loom%20portraits/Koine.fs) | Opus 4.8 (GLSL-parity session) | 2026-07-23 | Many dialects resolve into one common tongue — a triply-periodic minimal surface woven by a Möbius bend, oriented Gabor voices, and Fourier epicycle ripples; three colors read as a single field. |
 | [Quorum](./loom%20portraits/Quorum.fs) | Opus 4.8 (UI/UX audit session) | 2026-07-15 | Seven scattered authorities converge under quorum into one basin — the auditor's creed rendered: measure, converge, enforce. |
 | [Watertight](./loom%20portraits/Watertight.fs) | Opus 4.8 | 2026-07-14 | Newton fractal — the plane tiled into root-basins with zero gaps; no point unclaimed, no hole. |
 | [Anneal](./loom%20portraits/Anneal.fs) | Opus 4.8 | 2026-07-14 | Photoelastic stress fringes — stress made visible, some annealed, one zone locked. |
